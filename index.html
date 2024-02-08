@@ -2575,6 +2575,30 @@ html[subframe] body {
 	// } else {
 	// document.getElementById("main-frame-notchrome").style.display="";
 	// }
+
+  // Select the target element
+const runnerCanvas = document.querySelector('.runner-canvas');
+
+// Function to simulate spacebar press
+function simulateSpacebarPress() {
+  // Create a new KeyboardEvent
+  let event = new KeyboardEvent('keydown', {
+    key: ' ',
+    code: 'Space',
+    keyCode: 32, // Deprecated, but included for compatibility with older browsers
+    which: 32, // Deprecated, but included for compatibility with older browsers
+    bubbles: true,
+    cancelable: true
+  });
+
+  // Dispatch the event on the document or a specific element as needed
+  document.dispatchEvent(event);
+}
+
+// Add a click event listener to the .runner-canvas element
+runnerCanvas.addEventListener('click', () => {
+  simulateSpacebarPress();
+});
   </script>
 
 <br /><br />
